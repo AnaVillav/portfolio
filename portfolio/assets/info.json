@@ -1,0 +1,92 @@
+[
+ {
+     "id" : 0, 
+     "title": "Yaku Aguamundi", 
+     "type": "Mapping",
+     "programs": "Resolume, Unreal Engine",
+     "description": "An immersive 340 degrees mapping with 3D animated submarine animals endemic to Ecuador. A cinematographic rendering and mapping to create an inmersive experience."  
+
+ },
+ {
+   "id" : 1, 
+   "title": "Nestle Hawkeye Game", 
+   "type": "Application",
+   "programs": "Unity Engine",
+   "description": "A small game for Nestle about tennis. The player can select up to three hawkeye moments and guess if it was right or wrong."  
+
+ },
+ {
+    "id" : 2, 
+    "title": "BDP Videoplayers", 
+    "type": "Videowalls",
+    "programs": "Three.js, OnSignTV, Java, HTML, CSS",
+    "description": "A dynamic video player with categories developed for OnSignTV a CMS platform. It is displayed on a Videowall of eight screens (4x2) where two people can interact at a time, and a videowall of four screens (2*2)."  
+
+ },
+ {
+
+   "id" : 3, 
+   "title": "MuNa Museum", 
+   "type": "Applications",
+   "programs": "Unity Engine",
+   "description": "Different applications for the National Museums. Developed for multitouch devices. It includes a game about creating collections, the museum map, and two timelines."  
+
+ },
+ {
+    "id" : 4, 
+    "title": "Distrito", 
+    "type": "Webpage",
+    "programs": "Pixi.js, HTML, Java, CSS",
+    "description": "Interactive webpage with 2D sprites that simulate a 3D models appearence. It includes a json file to dynamically add information for different interactive buildings"  
+
+ },
+ {
+    "id" : 5, 
+    "title": "MuPa Museum", 
+    "type": "Applications",
+    "programs": "Unity Editor, Arduino, OpenFrameworks",
+    "description": "The Pasillo (traditional music) Museum has two music players with a searcher and category organizer. The information is loaded through a external database. Also a Karoke Jukebox was developed. It rewired the buttons of a jukebox with an arduino to trigger differente karaoke songs"  
+
+ },
+ {
+    "id" : 6, 
+    "title": "Feminicidios Ecuador", 
+    "type": "Webpage",
+    "programs": "Tui.chart, HTML, Java, CSS, Google Sheets",
+    "description": "A dynamic webpage about femicide in Ecuador that is updated through a database in Google Sheets. The webpage has charts and a map added with Toast UI charts"  
+
+ }
+ ,
+ {
+    "id" : 7, 
+    "title": "Killka and Brisa", 
+    "type": "Toy",
+    "programs": "Arduino, Processing",
+    "description": "A interactive toy for children to help them learn Braille. It gives feedback about 6 buttons positions through headphones to help learn the Alphabet"  
+
+ }
+ ,
+ {
+    "id" : 8, 
+    "title": "Multifest", 
+    "type": "Webpage VR",
+    "programs": "Aframe, HTML, Java, CSS",
+    "description": "Webpage developed for a VR video festival. It included ten different VR videos from around the world"  
+
+ }
+ ,
+ {
+    "id" : 9, 
+    "title": "Robotic Future", 
+    "type": "VR Application",
+    "programs": "Unreal Engine",
+    "description": "An application of a futuristic room in which you are a robot. It was developed for Oculus using Unreal Engine and bought assets."  
+
+ }
+ 
+
+
+
+
+
+]
