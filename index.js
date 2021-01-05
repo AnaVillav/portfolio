@@ -240,6 +240,7 @@ var pic_position = [];
 //window Resize event
 window.addEventListener('resize', resizeScale);
 window.addEventListener('mouseup', mouseUp);
+window.addEventListener('touchend', mouseUp);
 
 function resizeScale() {
     appWidth = window.innerWidth - 16;
@@ -330,7 +331,61 @@ function createAbout() {
 }
 
 function placeAbout() {
-    if (appWidth > 960) {
+    if (mobile) {
+        if (appWidth < appHeight ) {
+
+            a_ana.height = appHeight * .7;
+            a_ana.scale.set(a_ana.scale.y)
+            a_vertport.scale.set(a_ana.scale.y * 1.6);
+    
+    
+            a_vertport.rotation = 0;
+            a_vertport.x = appWidth * .25;
+            a_vertport.y = appHeight * .55;
+    
+            a_ana.x = a_vertport.x + (a_ana.width * .2);
+            a_ana.y = appHeight * .55;
+    
+    
+            a_description.x = a_mail.x = a_number.x = appWidth * .75;
+            a_description.y = appHeight * .45;
+            a_mail.y = appHeight * .6;
+            a_number.y = appHeight * .65;
+    
+            a_ball.x = appWidth * .95;
+            a_ball.y = appHeight - (appHeight / 2 - (a_vertport.height) / 2);
+    
+    
+            styledesc.wordWrapWidth = appWidth * .4;
+        }
+        else {
+    
+    
+            a_ana.height = appHeight * .6;
+            a_ana.scale.set(a_ana.scale.y)
+            a_vertport.scale.set(a_ana.scale.y * 1.6);
+    
+            a_vertport.rotation = 3.14;
+            a_vertport.x = a_ana.width * .28;
+            a_vertport.y = appHeight * .55;
+    
+            a_ana.x = 0;
+            a_ana.y = appHeight * .55;
+    
+    
+            a_description.x = a_mail.x = a_number.x = appWidth * .7;
+            a_description.y = appHeight * .45;
+            a_mail.y = appHeight * .7;
+            a_number.y = appHeight * .75;
+    
+            a_ball.x = appWidth * .95;
+            a_ball.y = appHeight - (appHeight / 2 - (a_vertport.height) / 2);
+    
+    
+            styledesc.wordWrapWidth = appWidth * .45;
+        }
+    } else {
+    if (appWidth > 960 ) {
 
         a_ana.height = appHeight * .7;
         a_ana.scale.set(a_ana.scale.y)
@@ -383,6 +438,7 @@ function placeAbout() {
         styledesc.wordWrapWidth = appWidth * .45;
     }
 }
+}
 
 function createPortfolio() {
 
@@ -428,7 +484,31 @@ function createPortfolio() {
 }
 
 function placePortfolio() {
+if (mobile) {
+    if (appWidth < appHeight) {
+        corners.width = appWidth * .85;
+        corners.scale.set(corners.scale.x);
+        picslide.scale.set(corners.scale.x)
+        scaleContainer = corners.scale.x;
+    }
+else {
+    corners.scale.set (scaleContainer);
+    picslide.scale.set (scaleContainer);
+}
+    corners.x = appWidth / 2;
+    corners.y = appHeight / 2;
+    picslide.x = appWidth / 2;
+    picslide.y = appHeight / 2;
 
+    p_slider.x = p_bg.x = p_title.x = p_type.x = p_btmore.x = appWidth * .5;
+    p_bg.y = appHeight * .5
+    p_title.y = appHeight * .485;
+    p_type.y = appHeight * .515;
+    p_btmore.y = appHeight * .8;
+    p_slider.y = p_ball.y = appHeight * .9;
+
+
+} else {
     if (appWidth < 960) {
         corners.width = appWidth * .85;
         corners.scale.set(corners.scale.x);
@@ -452,6 +532,7 @@ else {
     p_slider.y = p_ball.y = appHeight * .9;
 
 }
+}
 
 function createInfo() {
     i_horport.anchor = i_picture.anchor.set (0.5); 
@@ -467,6 +548,47 @@ function createInfo() {
 }
 
 function placeInfo() {
+    if (mobile) {
+        if (appWidth < appHeight) {
+
+            i_title.x = i_type.x = i_desc.x = i_programs.x = i_btback.x = appWidth * 0.75;
+    
+            i_title.y = i_desc.y-100;
+            i_type.y = i_desc.y-70;
+            i_desc.y = appHeight *.55 -50;
+            i_programs.y = i_desc.y + 180;
+            i_btback.y = i_desc.y+240;
+            styledesc.wordWrapWidth = appWidth * .4;
+    
+            i_horport.y = i_picture.y = appHeight * .55;
+            i_picture.width = appWidth * .4;
+            i_horport.width = i_picture.width / 2;
+            i_picture.height = i_picture.width / 1.7;
+            i_horport.height = i_picture.height * 2;
+            i_horport.x = appWidth * .41;
+            i_picture.x = appWidth * .3;
+    
+        } else {
+            i_horport.y = i_picture.y = appHeight * .67;
+            i_picture.width = appWidth * .75;
+            i_horport.width = i_picture.width / 2;
+            i_picture.height = i_picture.width / 1.7;
+            i_horport.height = i_picture.height * 2;
+            i_horport.x = appWidth * .725;
+            i_picture.x = appWidth * .5;
+    
+            i_title.x = i_type.x = i_desc.x = i_programs.x = i_btback.x = appWidth * 0.5;
+    
+            styledesc.wordWrapWidth = appWidth * .9;
+    
+            i_title.y = appHeight * .15;
+            i_type.y = i_title.y + 25;
+            i_desc.y = i_type.y +35;
+            i_programs.y = i_desc.y +140;
+            i_btback.y = appHeight * .965;
+    
+        }
+    } else {
 
     if (appWidth > 960) {
 
@@ -507,6 +629,7 @@ function placeInfo() {
         i_btback.y = appHeight * .965;
 
     }
+}
 }
 
 //#endregion 
@@ -594,16 +717,15 @@ var maxRBall;
 var ballselec = false;
 var dragdir = false;
 var datax = 0;
-var pos;
+var pos=0;
 
 
 function onDrag(event) {
     dragging = true;
-
-    if (event.currentTarget.name == "slide") {
-        ballselec = false;
-    } else {
+    if (event.currentTarget.name == "ball") {
         ballselec = true;
+    } else {
+        ballselec = false;
     }
 
     gsap.to(p_title, { alpha: 0, duration: 0.5, ease: "sine.in" });
@@ -678,17 +800,19 @@ function onDragMove(event) {
 }
 
 function endDrag(event) {
-
     startdragging = 0;
     if (dragging) {
         
     dragging = false;
+
+    var updatedPic = [];
+    for (var i = 0; i < pic_position.length; i++) {
+        updatedPic[i] = appWidth / 2 + (1000 * i * scaleContainer);
+    }
+
         if (dragged) {
             dragged = false;
-            var updatedPic = [];
-            for (var i = 0; i < pic_position.length; i++) {
-                updatedPic[i] = appWidth / 2 + (1000 * i * scaleContainer);
-            }
+      
 
             var compare = appWidth - picslide.x;
             var closest = updatedPic.reduce(function (prev, curr) {
@@ -713,7 +837,6 @@ function endDrag(event) {
 
             }
             setTimeout(() => {
-                dragged = false;
                 updateInfo(pos);
             }, 500);
             finalposition = appWidth - updatedPic[pos];
@@ -727,7 +850,35 @@ function endDrag(event) {
 
         
         } else {
+            if (event.data.global.x>appWidth/2 + (500*scaleContainer)) {
+                pos=pos+1;
+                finalposition = appWidth - updatedPic[pos];
+                setTimeout(() => {
+                    dragged = false;
+                    updateInfo(pos);
+                }, 500);
+                gsap.to(picslide.position, {
+                    x: finalposition, duration: 1,
+                    onUpdate: function () {
+                        mapBall()
+                    },
+                }); 
+            } else if (event.data.global.x< appWidth/2 -(500*scaleContainer)) {
+                pos=pos-1;
+                finalposition = appWidth - updatedPic[pos];
+                setTimeout(() => {
+                    dragged = false;
+                    updateInfo(pos);
+                }, 500);
+                gsap.to(picslide.position, {
+                    x: finalposition, duration: 1,
+                    onUpdate: function () {
+                        mapBall()
+                    },
+                });
+            } else {
             openInfo();
+            }
         }
         gsap.to(p_title, { alpha: .75, duration: 0.5, ease: "sine.out" }).delay(0.5);
         gsap.to(p_type, { alpha: .75, duration: 0.5, ease: "sine.out" }).delay(0.5);
@@ -756,7 +907,7 @@ function mapPicSlide() {
     picslide.x = map_range(p_ball.x, maxLBall, maxRBall, maxL, maxR);
 }
 
-function mouseUp() {
+function mouseUp(event) {
     if (dragged) {
         endDrag();
     }
