@@ -221,14 +221,14 @@ const a_number = new PIXI.Text('+593983505904', styledesc);
 
 const p_title = new PIXI.Text('Yaku Aguamundi', styletitle);
 const p_type = new PIXI.Text('mapping', styledesc);
-const p_btmore = new PIXI.Text('more', stylebt);
+const p_btmore = new PIXI.Text('ABOUT THIS', stylebt);
 
 
 const i_title = new PIXI.Text('Yaku Aguamundi', styletitle);
 const i_type = new PIXI.Text('mapping', styledesc);
 const i_desc = new PIXI.Text('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet suscipit ipsum. In in justo nisl. Donec vitae vulputate odio. Sed mattis mattis leo, quis rutrum dolor consequat vitae. Donec ut erat et dui varius sagittis. sprimis in faucibus. Proin a arcu orci.', styledesc);
 const i_programs = new PIXI.Text('Resolume', styledesc);
-const i_btback = new PIXI.Text('back', stylebt);
+const i_btback = new PIXI.Text('GO BACK', stylebt);
 
 //#endregion
 
@@ -271,6 +271,7 @@ function init() {
     createAbout();
     createPortfolio();
     createInfo();
+    updateInfo (0);
     state = 0;
 
 }
@@ -528,7 +529,7 @@ else {
     p_bg.y = appHeight * .5
     p_title.y = appHeight * .485;
     p_type.y = appHeight * .515;
-    p_btmore.y = appHeight * .8;
+    p_btmore.y = appHeight * .78;
     p_slider.y = p_ball.y = appHeight * .9;
 
 }

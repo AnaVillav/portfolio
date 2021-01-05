@@ -60,7 +60,7 @@
  {
     "id" : 7, 
     "title": "Killka and Brisa", 
-    "type": "Toy",
+    "type": "Educational Toy",
     "programs": "Arduino, Processing",
     "description": "A interactive toy for children to help them learn Braille. It gives feedback about 6 buttons positions through headphones to help learn the Alphabet"  
 
