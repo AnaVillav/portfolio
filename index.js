@@ -273,7 +273,6 @@ function init() {
     createInfo();
     updateInfo (0);
     state = 0;
-
 }
 
 //#region Creacion
@@ -333,7 +332,7 @@ function createAbout() {
 
 function placeAbout() {
     if (mobile) {
-        if (appWidth < appHeight ) {
+        if (appWidth > appHeight ) {
 
             a_ana.height = appHeight * .7;
             a_ana.scale.set(a_ana.scale.y)
@@ -550,7 +549,7 @@ function createInfo() {
 
 function placeInfo() {
     if (mobile) {
-        if (appWidth < appHeight) {
+        if (appWidth > appHeight) {
 
             i_title.x = i_type.x = i_desc.x = i_programs.x = i_btback.x = appWidth * 0.75;
     
@@ -900,6 +899,7 @@ function updateInfo(id) {
 
 
 }
+
 function mapBall() {
     p_ball.x = map_range(picslide.x, maxL, maxR, maxLBall, maxRBall);
 }
@@ -918,13 +918,11 @@ function mouseUp(event) {
 //#endregion
 
 
-
 function update() {
 
     if (Loading.visible == true) {
         app.ticker.update();
     }
-
 
 };
 
