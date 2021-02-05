@@ -67,6 +67,7 @@ loader.add('blackbg', 'blackbg.png');
 loader.add('scroll', 'scroll.png');
 
 
+
 var scaleContainer = appHeight / 1080;
 minScaleContainer = scaleContainer;
 
@@ -84,7 +85,8 @@ const g_info = new PIXI.Container();
 var p = [];
 var pT = [];
 for (var i = 0; i < 10; i++) {
-    loader.add('p' + i, 'projects/' + i + '.jpg')
+    loader.add('p' + i, 'projects/' + i + '.jpg');
+    loader.add('pv'+i, 'projects/'+i+'.mp4');
 }
 
 //info
@@ -129,16 +131,26 @@ WebFont.load({
             p[9] = new PIXI.Sprite(resources.p9.texture);
 
             //projectTexture
-            pT[0] = new PIXI.Texture(resources.p0.texture);
-            pT[1] = new PIXI.Texture(resources.p1.texture);
-            pT[2] = new PIXI.Texture(resources.p2.texture);
-            pT[3] = new PIXI.Texture(resources.p3.texture);
-            pT[4] = new PIXI.Texture(resources.p4.texture);
-            pT[5] = new PIXI.Texture(resources.p5.texture);
-            pT[6] = new PIXI.Texture(resources.p6.texture);
-            pT[7] = new PIXI.Texture(resources.p7.texture);
-            pT[8] = new PIXI.Texture(resources.p8.texture);
-            pT[9] = new PIXI.Texture(resources.p9.texture);
+            pT[0] = new PIXI.Texture.from(resources.pv0.url);
+            pT[1] = new PIXI.Texture.from(resources.pv1.url);
+            pT[2] = new PIXI.Texture.from(resources.pv2.url);
+            pT[3] = new PIXI.Texture.from(resources.pv3.url);
+            pT[4] = new PIXI.Texture.from(resources.pv4.url);
+            pT[5] = new PIXI.Texture.from(resources.pv5.url);
+            pT[6] = new PIXI.Texture.from(resources.pv6.url);
+            pT[7] = new PIXI.Texture.from(resources.pv7.url);
+            pT[8] = new PIXI.Texture.from(resources.pv8.url);
+            pT[9] = new PIXI.Texture.from(resources.pv9.url);
+
+            pT[1].baseTexture.resource.source.loop = true;
+            pT[2].baseTexture.resource.source.loop = true;
+            pT[3].baseTexture.resource.source.loop = true;
+            pT[4].baseTexture.resource.source.loop = true;
+            pT[5].baseTexture.resource.source.loop = true;
+            pT[6].baseTexture.resource.source.loop = true;
+            pT[7].baseTexture.resource.source.loop = true;
+            pT[8].baseTexture.resource.source.loop = true;
+            pT[9].baseTexture.resource.source.loop = true;
 
             //info
             i_horport = new PIXI.Sprite(resources.horport.texture);
@@ -214,7 +226,7 @@ const m_aboutme = new PIXI.Text('ABOUT ME', stylemenu);
 const m_divide = new PIXI.Text('/', divider);
 
 
-const a_description = new PIXI.Text('I am a programmer with a passion on creating new and valuable experiences. I have developed webpages, desktop and mobile applications. I have worked with platforms such as Unity, Unreal, Arduino, Processing, and also javascript libraries as Pixi.js, Aframe.js, and Three.js', styledesc);
+const a_description = new PIXI.Text('I am a programmer with a passion for creating new and valuable experiences. I developed webpages, desktop and mobile applications. I work with platforms such as Unity, Unreal, Arduino, Processing, and also javascript libraries as Pixi.js, Aframe.js, and Three.js', styledesc);
 const a_mail = new PIXI.Text('ana.villavicencio.b@gmail.com', styledesc);
 const a_number = new PIXI.Text('+593983505904', styledesc);
 
@@ -699,6 +711,53 @@ function openInfo() {
     state = 1;
     g_info.visible = true;
 }
+
+function closePortfolio() {
+
+    switch (state) {
+
+        case 1:
+            g_info.visible = false;
+            break;
+
+        case 2:
+            g_about.visible = false;
+            break;
+    }
+
+    state = 0;
+    g_portfolio.visible = true;
+
+}
+
+function closeAbout() {
+    switch (state) {
+        case 0:
+            g_portfolio.visible = false;
+            break;
+
+        case 1:
+            g_info.visible = false;
+            break;
+    }
+
+    state = 2
+    g_about.visible = true;
+}
+
+function closeInfo() {
+    switch (state) {
+        case 0:
+            g_portfolio.visible = false;
+            break;
+
+        case 2:
+            g_about.visible = false;
+            break;
+    }
+    state = 1;
+    g_info.visible = true;
+}
 //#endregion
 
 
@@ -923,6 +982,8 @@ function update() {
     if (Loading.visible == true) {
         app.ticker.update();
     }
+
+    console.log (pT[0])
 
 };
 
