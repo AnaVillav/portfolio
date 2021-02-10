@@ -142,6 +142,7 @@ WebFont.load({
             pT[8] = new PIXI.Texture.from(resources.pv8.url);
             pT[9] = new PIXI.Texture.from(resources.pv9.url);
 
+            pT[0].baseTexture.resource.source.loop = true;
             pT[1].baseTexture.resource.source.loop = true;
             pT[2].baseTexture.resource.source.loop = true;
             pT[3].baseTexture.resource.source.loop = true;
@@ -151,6 +152,18 @@ WebFont.load({
             pT[7].baseTexture.resource.source.loop = true;
             pT[8].baseTexture.resource.source.loop = true;
             pT[9].baseTexture.resource.source.loop = true;
+
+            
+            pT[0].baseTexture.resource.source.muted = true;
+            pT[1].baseTexture.resource.source.muted = true;
+            pT[2].baseTexture.resource.source.muted = true;
+            pT[3].baseTexture.resource.source.muted = true;
+            pT[4].baseTexture.resource.source.muted = true;
+            pT[5].baseTexture.resource.source.muted = true;
+            pT[6].baseTexture.resource.source.muted = true;
+            pT[7].baseTexture.resource.source.muted = true;
+            pT[8].baseTexture.resource.source.muted = true;
+            pT[9].baseTexture.resource.source.muted = true;
 
             //info
             i_horport = new PIXI.Sprite(resources.horport.texture);
@@ -983,7 +996,6 @@ function update() {
         app.ticker.update();
     }
 
-    console.log (pT[0])
 
 };
 
